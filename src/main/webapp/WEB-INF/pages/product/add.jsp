@@ -16,37 +16,12 @@
 	</ul>
 </div>
 
-<a href="add"><button type="button" class="btn btn-danger">Add</button></a>
-
-<form method="get">
-<input type="text" name="query" id="query">
-</form>
-
-<table class="table table-hover table-striped">
-		<thead>
-			<tr>
-				<th>Id</th>
-				<th>Name</th>
-				<th>Quantity</th>
-				<th>Price</th>
-				<th>Actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="p" items="${products}">
-				<tr>
-					<td>${p.id}</td>
-					<td>${p.name}</td>
-					<td>${p.quantity}</td>
-					<td>${p.price}</td>
-					<td>
-						<a href="${p.id}/delete"> delete </a>
-						<a href="${p.id}/edit"> edit </a>
-					</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+<form:form modelAttribute="product">
+<form:input path="price"/><P>
+<form:input path="name"/><p>
+<form:input path="quantity"/><p>
+<input type="submit" value = "Save">
+</form:form>
 
 <%@ include file="/WEB-INF/pages/layout/footer.jsp"%>
 
