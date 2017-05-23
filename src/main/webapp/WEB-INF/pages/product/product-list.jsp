@@ -8,22 +8,14 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ include file="/WEB-INF/pages/layout/head.jsp"%>
 
-<div class="jumbotron">
-	<ul>
-		<li>page = ${page}</li>
-		<li>orderBy = ${orderBy}</li>
-		<li>size = ${param.size}</li>
-	</ul>
-</div>
-
-<table class="table table-hover table-striped">
+<table>
 		<thead>
 			<tr>
 				<th>Id</th>
 				<th>Name</th>
 				<th>Quantity</th>
 				<th>Price</th>
-				<th>Actions</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -33,11 +25,12 @@
 					<td>${p.name}</td>
 					<td>${p.quantity}</td>
 					<td>${p.price}</td>
-					<td></td>
+					<td><a href="${contextPath}/product/${p.id}/delete">x</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+
 
 <%@ include file="/WEB-INF/pages/layout/footer.jsp"%>
 
