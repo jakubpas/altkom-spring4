@@ -23,7 +23,6 @@ public class HibernateProductRepo implements ProductRepo {
 	}
 
 	@Override
-	@Transactional(readOnly = true)
 	public Long count() {
 		return (Long) em.createQuery("SELECT count(*) FROM Product p").getSingleResult();
 	}
@@ -35,10 +34,14 @@ public class HibernateProductRepo implements ProductRepo {
 	}
 
 	@Override
-	@Transactional(readOnly = true)
 	public Product find(Long id) {
 		Product product = em.find(Product.class, id);
 		return product;
+	}
+
+	@Override
+	public List<Product> search(String query) {
+		return em.createQuery("FROM Product p WHERE p.name = :query").setParameter("query", query).getResultList();
 	}
 
 	@Override
@@ -47,7 +50,6 @@ public class HibernateProductRepo implements ProductRepo {
 	}
 
 	@Override
-	@Transactional(readOnly = true)
 	public List<Product> getAll() {
 		return em.createQuery("FROM Product p").getResultList();
 	}

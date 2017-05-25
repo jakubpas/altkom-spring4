@@ -14,6 +14,8 @@ public interface ProductRepo {
 
 	public Product find(Long id);
 
+	public List<Product> search(String query);
+
 	public void update(Product product);
 
 	@Monitoring

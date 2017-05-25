@@ -34,6 +34,11 @@ public class RestProductController {
 		repo.delete(id);
 	}
 
+	@RequestMapping(value = "/search", method = RequestMethod.POST)
+	public List<Product> search(@RequestBody String query) {
+		return repo.search(query);
+	}
+
 	@RequestMapping(method = RequestMethod.PUT)
 	public void update(@RequestBody Product product) {
 		repo.update(product);
