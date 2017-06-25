@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloController {
 	@RequestMapping("/hello")
 	public void hello(Writer writer) throws Exception {
-		writer.write("Hello World");
+		writer.write("Hello World test");
 	}
 }

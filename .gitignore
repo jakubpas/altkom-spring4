@@ -1,5 +1,8 @@
-target
+lib
+out
+.idea
 .settings
 .classpath
 .project
 node_modules
+target
