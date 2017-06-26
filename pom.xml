@@ -13,7 +13,21 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
-		</plugins>
+
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <!--<configuration>-->
+                    <!--<url>http://localhost:8080/manager/text</url>-->
+                    <!--<server>tomcatserver</server>-->
+                    <!--<path>/spring-shop</path>-->
+                    <!--<username>deploymedia</username>-->
+                    <!--<password>PreBlank12</password>-->
+                <!--</configuration>-->
+            </plugin>
+
+        </plugins>
 	</build>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
